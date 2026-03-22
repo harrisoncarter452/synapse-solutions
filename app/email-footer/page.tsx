@@ -1,5 +1,10 @@
 import { quoteNotificationEmail, quoteConfirmationEmail } from "@/lib/email-templates";
 
+// Replace production URL with local for preview
+function localise(html: string) {
+  return html.replace("https://synapse-ai-solutions.com/email-logo.png", "/email-logo.png");
+}
+
 const SAMPLE_DATA = {
   name: "James Wilson",
   email: "james@example.com",
@@ -10,8 +15,8 @@ const SAMPLE_DATA = {
 };
 
 export default function EmailPreviewPage() {
-  const notificationHtml = quoteNotificationEmail(SAMPLE_DATA);
-  const confirmationHtml = quoteConfirmationEmail({ name: SAMPLE_DATA.name, service: SAMPLE_DATA.service });
+  const notificationHtml = localise(quoteNotificationEmail(SAMPLE_DATA));
+  const confirmationHtml = localise(quoteConfirmationEmail({ name: SAMPLE_DATA.name, service: SAMPLE_DATA.service }));
 
   return (
     <div style={{ background: "#1a1a1a", minHeight: "100vh", padding: "40px 20px", fontFamily: "sans-serif" }}>

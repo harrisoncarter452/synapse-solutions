@@ -15,8 +15,8 @@ const FOOTER_HTML = `
             <img
               src="https://synapse-ai-solutions.com/email-logo.png"
               alt="Synapse Solutions"
-              width="64"
-              height="64"
+              width="120"
+              height="120"
               style="display:block;object-fit:contain;"
             />
           </td>
