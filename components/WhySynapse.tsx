@@ -7,54 +7,54 @@ const cards = [
   {
     icon: TrendingUp,
     eyebrow: "Revenue",
-    title: "Your pipeline is bleeding out.",
+    title: "More revenue. More growth.",
     description:
-      "Flat conversion. Stagnant growth. Every week you wait, your competitors are flooding their funnel with qualified buyers. We close the gap — fast.",
+      "Flood your business with qualified buyers and close the gap between potential and performance. We build the pipeline, run the campaigns, and hand your team pre-qualified leads ready to close.",
     color: "#8B5CF6",
     highlight: true,
   },
   {
     icon: Target,
     eyebrow: "Lead Capture",
-    title: "Leads don't wait. Your team does.",
+    title: "Zero leads left behind.",
     description:
-      "Enquiries drop after hours. Follow-up is slow. Every missed lead is revenue walking straight to your competitor. We capture, respond, and pre-qualify every single one — instantly, around the clock.",
+      "Every enquiry captured, responded to instantly, and handed to your team pre-qualified — regardless of the hour. No more leads falling through the cracks after hours or over the weekend.",
     color: "#F59E0B",
     highlight: false,
   },
   {
     icon: DollarSign,
     eyebrow: "Costs",
-    title: "Your overheads are winning.",
+    title: "Lower costs. Higher productivity.",
     description:
-      "Wages, inefficiency, and manual processes are eating your margin quarter after quarter. We automate the drain. The savings go straight back to your bottom line.",
+      "Automate the processes eating your margin and hand the savings back to your bottom line. Less overhead, leaner operations, and a business that produces more with exactly what it has.",
     color: "#EC4899",
     highlight: false,
   },
   {
     icon: Rocket,
     eyebrow: "Productivity",
-    title: "Your best people are doing work AI should do.",
+    title: "Give your team their time back.",
     description:
-      "Admin. Data entry. Repetitive follow-up. Your sharpest minds are burning hours on the lowest-value tasks. Offload it. Same headcount — exponentially more output.",
+      "Admin, data entry, repetitive follow-up — offloaded. Your people focus on judgment, relationships, and the decisions that actually move the needle. Same headcount. Exponentially more impact.",
     color: "#8B5CF6",
     highlight: false,
   },
   {
     icon: HeadphonesIcon,
     eyebrow: "Customer Service",
-    title: "Slow response times are costing you daily.",
+    title: "On call at 3am. No complaints.",
     description:
-      "Every unanswered message is a lost sale, a bad review, a customer gone. Instant, accurate answers 24/7 — without adding a single person to payroll. You rest. It never does.",
+      "Instant, accurate answers around the clock — without adding a single person to payroll. Every customer gets a fast, helpful response the moment they reach out, day or night.",
     color: "#EC4899",
     highlight: false,
   },
   {
     icon: BarChart3,
     eyebrow: "Competitive Edge",
-    title: "The gap is widening. Every. Single. Day.",
+    title: "An asset that pays forever.",
     description:
-      "AI compounds in value — sharper context, deeper integration, harder for rivals to replicate. Your competitors who move first will be impossible to catch. Don't be the one playing catch-up.",
+      "AI compounds in value — sharper context week over week, deeper integration, and a strategic edge that grows over time. It's not a cost. It's the highest-returning investment your business can make.",
     color: "#F59E0B",
     highlight: true,
   },
@@ -90,7 +90,9 @@ export default function WhySynapse() {
             <span className="gradient-text">waiting around.</span>
           </h2>
           <p style={{ fontSize: "18px", color: "rgba(255,255,255,0.5)", lineHeight: 1.7 }}>
-            Right now, businesses like yours are deploying AI to capture more leads, slash overheads, and outpace rivals who are still doing things manually. The window to act is open — but it won&apos;t be forever.
+            We believe in continuous improvement and empowerment. AI doesn&apos;t replace great people —
+            it removes the grunt work that stops them from being great.
+            Here&apos;s what that looks like in practice.
           </p>
         </motion.div>
 

@@ -16,7 +16,7 @@ const INITIAL_MESSAGES: Message[] = [
   {
     id: 1,
     from: "syn",
-    text: "Hey! I'm Syn, your Synapse Solutions assistant. What can I help you with today?\n\nInterested in a chatbot like me? I can help your customers and team 24/7.",
+    text: "Hey! I'm Synthia, your Synapse Solutions assistant. What can I help you with today?\n\nInterested in a chatbot like me? I can help your customers and team 24/7.",
     quickReplies: [
       "What services do you offer?",
       "Tell me about AI Chatbots",
@@ -173,7 +173,7 @@ export default function Chatbot() {
               boxShadow: "0 8px 32px rgba(139,92,246,0.45)",
             }}
           >
-            <Image src="/brain.png" alt="Syn" width={58} height={58} style={{ objectFit: "contain", padding: "1px" }} />
+            <Image src="/brain.png" alt="Synthia" width={58} height={58} style={{ objectFit: "contain", padding: "1px" }} />
             {notified && (
               <span style={{
                 position: "absolute",
@@ -233,10 +233,10 @@ export default function Chatbot() {
                 flexShrink: 0,
                 overflow: "hidden",
               }}>
-                <Image src="/brain.png" alt="Syn" width={52} height={52} style={{ objectFit: "contain", padding: "1px" }} />
+                <Image src="/brain.png" alt="Synthia" width={52} height={52} style={{ objectFit: "contain", padding: "1px" }} />
               </div>
               <div style={{ flex: 1 }}>
-                <div style={{ fontSize: "15px", fontWeight: 700, color: "white", lineHeight: 1 }}>Syn</div>
+                <div style={{ fontSize: "15px", fontWeight: 700, color: "white", lineHeight: 1 }}>Synthia</div>
                 <div style={{ fontSize: "12px", color: "rgba(255,255,255,0.75)", marginTop: "3px", display: "flex", alignItems: "center", gap: "5px" }}>
                   <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#22C55E", display: "inline-block" }} />
                   Synapse Solutions · Online
@@ -270,7 +270,7 @@ export default function Chatbot() {
                   }}>
                     {msg.from === "syn" && (
                       <div style={{ width: "46px", height: "46px", borderRadius: "50%", background: "linear-gradient(135deg, #8B5CF6, #EC4899)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, overflow: "hidden" }}>
-                        <Image src="/brain.png" alt="Syn" width={40} height={40} style={{ objectFit: "contain", padding: "1px" }} />
+                        <Image src="/brain.png" alt="Synthia" width={40} height={40} style={{ objectFit: "contain", padding: "1px" }} />
                       </div>
                     )}
                     <div style={{
@@ -326,7 +326,7 @@ export default function Chatbot() {
               {typing && (
                 <div style={{ display: "flex", alignItems: "flex-end", gap: "8px" }}>
                   <div style={{ width: "46px", height: "46px", borderRadius: "50%", background: "linear-gradient(135deg, #8B5CF6, #EC4899)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, overflow: "hidden" }}>
-                    <Image src="/brain.png" alt="Syn" width={32} height={32} style={{ objectFit: "contain" }} />
+                    <Image src="/brain.png" alt="Synthia" width={32} height={32} style={{ objectFit: "contain" }} />
                   </div>
                   <div style={{ padding: "10px 16px", borderRadius: "14px 14px 14px 4px", background: "rgba(255,255,255,0.06)", display: "flex", gap: "4px", alignItems: "center" }}>
                     {[0, 1, 2].map((i) => (
