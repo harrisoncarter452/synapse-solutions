@@ -13,10 +13,10 @@ const FOOTER_HTML = `
         <tr>
           <td>
             <img
-              src="https://synapse-ai-solutions.com/logo-white.png"
+              src="https://synapse-ai-solutions.com/email-logo.png"
               alt="Synapse Solutions"
-              width="160"
-              height="40"
+              width="64"
+              height="64"
               style="display:block;object-fit:contain;"
             />
           </td>
