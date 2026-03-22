@@ -138,12 +138,8 @@ body {
     padding: 36px 0;
   }
 
-  /* Navbar */
-  .navbar-inner { height: 70px !important; }
-  .navbar-logo { width: 180px !important; height: 45px !important; }
-
   /* Hero */
-  .hero-section { padding-top: 78px !important; }
+  .hero-section { padding-top: 72px !important; }
   .hero-ctas { flex-direction: column !important; align-items: stretch !important; }
   .hero-ctas button { justify-content: center !important; }
 

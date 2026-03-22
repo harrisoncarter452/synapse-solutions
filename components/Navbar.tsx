@@ -1,8 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 const navLinks = [
@@ -14,7 +13,6 @@ const navLinks = [
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -23,7 +21,6 @@ export default function Navbar() {
   }, []);
 
   const handleNav = (href: string) => {
-    setMenuOpen(false);
     const el = document.querySelector(href);
     if (el) el.scrollIntoView({ behavior: "smooth" });
   };
@@ -45,80 +42,24 @@ export default function Navbar() {
         borderBottom: scrolled ? "1px solid rgba(255,255,255,0.06)" : "1px solid transparent",
       }}
     >
-      <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 24px" }}>
-        <div className="navbar-inner" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: "110px" }}>
-          {/* Logo */}
-          <button
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            style={{ background: "none", border: "none", cursor: "pointer", display: "flex", alignItems: "center", gap: "12px" }}
-          >
-            <Image
-              src="/logo.png"
-              alt="Synapse Solutions"
-              width={320}
-              height={80}
-              className="navbar-logo"
-              style={{ objectFit: "contain" }}
-            />
-          </button>
-
-          {/* Desktop nav */}
-          <div style={{ display: "flex", alignItems: "center", gap: "40px" }} className="hidden md:flex">
-            {navLinks.map((link) => (
-              <button
-                key={link.href}
-                onClick={() => handleNav(link.href)}
-                style={{
-                  background: "none",
-                  border: "none",
-                  color: "rgba(255,255,255,0.7)",
-                  fontSize: "14px",
-                  fontWeight: 500,
-                  cursor: "pointer",
-                  letterSpacing: "0.03em",
-                  transition: "color 0.2s",
-                  fontFamily: "inherit",
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "white")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.7)")}
-              >
-                {link.label}
-              </button>
-            ))}
+      {/* ── Desktop layout ── */}
+      <div className="nav-desktop">
+        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 24px" }}>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: "110px" }}>
             <button
-              onClick={() => handleNav("#contact")}
-              className="btn-gradient"
-              style={{ padding: "10px 24px", fontSize: "14px" }}
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              style={{ background: "none", border: "none", cursor: "pointer" }}
             >
-              Request a Quote
+              <Image
+                src="/logo.png"
+                alt="Synapse Solutions"
+                width={320}
+                height={80}
+                style={{ objectFit: "contain" }}
+              />
             </button>
-          </div>
 
-          {/* Mobile hamburger */}
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="flex md:hidden"
-            style={{ background: "none", border: "none", color: "white", cursor: "pointer" }}
-          >
-            {menuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile menu */}
-      <AnimatePresence>
-        {menuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            style={{
-              background: "rgba(10,10,10,0.98)",
-              borderBottom: "1px solid rgba(255,255,255,0.06)",
-              overflow: "hidden",
-            }}
-          >
-            <div style={{ padding: "20px 24px 24px", display: "flex", flexDirection: "column", gap: "20px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "40px" }}>
               {navLinks.map((link) => (
                 <button
                   key={link.href}
@@ -126,13 +67,16 @@ export default function Navbar() {
                   style={{
                     background: "none",
                     border: "none",
-                    color: "rgba(255,255,255,0.8)",
-                    fontSize: "16px",
+                    color: "rgba(255,255,255,0.7)",
+                    fontSize: "14px",
                     fontWeight: 500,
                     cursor: "pointer",
-                    textAlign: "left",
+                    letterSpacing: "0.03em",
+                    transition: "color 0.2s",
                     fontFamily: "inherit",
                   }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = "white")}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.7)")}
                 >
                   {link.label}
                 </button>
@@ -140,14 +84,104 @@ export default function Navbar() {
               <button
                 onClick={() => handleNav("#contact")}
                 className="btn-gradient"
-                style={{ width: "fit-content" }}
+                style={{ padding: "10px 24px", fontSize: "14px" }}
               >
                 Request a Quote
               </button>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          </div>
+        </div>
+      </div>
+
+      {/* ── Mobile layout — logo pinned left, links scroll right ── */}
+      <div className="nav-mobile">
+        {/* Logo — stays fixed */}
+        <div className="nav-mobile-logo">
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            style={{ background: "none", border: "none", cursor: "pointer", display: "flex", alignItems: "center" }}
+          >
+            <Image
+              src="/logo.png"
+              alt="Synapse Solutions"
+              width={150}
+              height={38}
+              style={{ objectFit: "contain" }}
+            />
+          </button>
+        </div>
+
+        {/* Scrollable nav links */}
+        <div className="nav-mobile-scroll">
+          {navLinks.map((link) => (
+            <button
+              key={link.href}
+              onClick={() => handleNav(link.href)}
+              style={{
+                background: "none",
+                border: "none",
+                color: "rgba(255,255,255,0.7)",
+                fontSize: "14px",
+                fontWeight: 500,
+                cursor: "pointer",
+                letterSpacing: "0.03em",
+                fontFamily: "inherit",
+                whiteSpace: "nowrap",
+                flexShrink: 0,
+                padding: "6px 4px",
+              }}
+            >
+              {link.label}
+            </button>
+          ))}
+          <button
+            onClick={() => handleNav("#contact")}
+            className="btn-gradient"
+            style={{ padding: "9px 18px", fontSize: "13px", whiteSpace: "nowrap", flexShrink: 0 }}
+          >
+            Request a Quote
+          </button>
+        </div>
+      </div>
+
+      <style>{`
+        .nav-desktop { display: block; }
+        .nav-mobile  { display: none; }
+
+        @media (max-width: 768px) {
+          .nav-desktop { display: none; }
+          .nav-mobile {
+            display: flex;
+            align-items: center;
+            height: 64px;
+            overflow: hidden;
+          }
+          .nav-mobile-logo {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            height: 100%;
+            padding: 0 14px 0 16px;
+            border-right: 1px solid rgba(255,255,255,0.08);
+            background: inherit;
+          }
+          .nav-mobile-scroll {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            overflow-x: auto;
+            padding: 0 20px;
+            height: 100%;
+            flex: 1;
+            /* hide scrollbar */
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+          }
+          .nav-mobile-scroll::-webkit-scrollbar {
+            display: none;
+          }
+        }
+      `}</style>
     </motion.nav>
   );
 }
