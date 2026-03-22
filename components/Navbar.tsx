@@ -59,7 +59,7 @@ export default function Navbar() {
               />
             </button>
 
-            <div style={{ display: "flex", alignItems: "center", gap: "40px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "40px", flexWrap: "nowrap" }}>
               {navLinks.map((link) => (
                 <button
                   key={link.href}
@@ -74,6 +74,7 @@ export default function Navbar() {
                     letterSpacing: "0.03em",
                     transition: "color 0.2s",
                     fontFamily: "inherit",
+                    whiteSpace: "nowrap",
                   }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = "white")}
                   onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.7)")}
