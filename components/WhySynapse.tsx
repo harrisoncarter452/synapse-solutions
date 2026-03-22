@@ -1,51 +1,62 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Zap, Moon, TrendingUp, Users, BarChart3, Rocket } from "lucide-react";
-import PainPointsGrid from "@/components/PainPointsGrid";
+import { TrendingUp, Target, Rocket, DollarSign, HeadphonesIcon, BarChart3 } from "lucide-react";
 
-const reasons = [
-  {
-    icon: Rocket,
-    title: "Give your team their time back.",
-    description:
-      "Admin, data entry, repetitive follow-up — offloaded. Your people focus on judgment, relationships, and the decisions that actually move the needle. Same headcount. Exponentially more impact.",
-    color: "#8B5CF6",
-  },
-  {
-    icon: Moon,
-    title: "On call at 3am. No complaints.",
-    description:
-      "Every enquiry answered. Every lead captured. Every task executed — regardless of the hour or the day. Fully operational while your team rests, so nothing slips through the cracks.",
-    color: "#EC4899",
-  },
-  {
-    icon: Zap,
-    title: "Zero variance. Zero excuses.",
-    description:
-      "Consistent precision from day one to year three. No mood swings, no dips in quality, no 'I'll circle back on that.' Reliable performance isn't an aspiration here — it's the baseline.",
-    color: "#F59E0B",
-  },
+const cards = [
   {
     icon: TrendingUp,
-    title: "Friction is the enemy. We kill it.",
+    eyebrow: "Revenue",
+    title: "Your pipeline is bleeding out.",
     description:
-      "We map every workflow, locate every drag on your operations, and automate it out of existence. Faster decisions, lower overhead, and a business that runs cleaner than it ever has.",
+      "Flat conversion. Stagnant growth. Every week you wait, your competitors are flooding their funnel with qualified buyers. We close the gap — fast.",
     color: "#8B5CF6",
+    highlight: true,
   },
   {
-    icon: Users,
-    title: "Grow revenue. Not your roster.",
+    icon: Target,
+    eyebrow: "Lead Capture",
+    title: "Leads don't wait. Your team does.",
     description:
-      "Triple the volume without a single new hire. AI handles the workload surge — inbound queries, pipeline management, internal requests — while your team stays locked on high-value work.",
+      "Enquiries drop after hours. Follow-up is slow. Every missed lead is revenue walking straight to your competitor. We capture, respond, and pre-qualify every single one — instantly, around the clock.",
+    color: "#F59E0B",
+    highlight: false,
+  },
+  {
+    icon: DollarSign,
+    eyebrow: "Costs",
+    title: "Your overheads are winning.",
+    description:
+      "Wages, inefficiency, and manual processes are eating your margin quarter after quarter. We automate the drain. The savings go straight back to your bottom line.",
     color: "#EC4899",
+    highlight: false,
+  },
+  {
+    icon: Rocket,
+    eyebrow: "Productivity",
+    title: "Your best people are doing work AI should do.",
+    description:
+      "Admin. Data entry. Repetitive follow-up. Your sharpest minds are burning hours on the lowest-value tasks. Offload it. Same headcount — exponentially more output.",
+    color: "#8B5CF6",
+    highlight: false,
+  },
+  {
+    icon: HeadphonesIcon,
+    eyebrow: "Customer Service",
+    title: "Slow response times are costing you daily.",
+    description:
+      "Every unanswered message is a lost sale, a bad review, a customer gone. Instant, accurate answers 24/7 — without adding a single person to payroll. You rest. It never does.",
+    color: "#EC4899",
+    highlight: false,
   },
   {
     icon: BarChart3,
-    title: "An asset that pays forever.",
+    eyebrow: "Competitive Edge",
+    title: "The gap is widening. Every. Single. Day.",
     description:
-      "Unlike a subscription you forget about, AI compounds in value. Sharper context week over week, deeper integration, and a strategic edge that becomes harder for competitors to close.",
+      "AI compounds in value — sharper context, deeper integration, harder for rivals to replicate. Your competitors who move first will be impossible to catch. Don't be the one playing catch-up.",
     color: "#F59E0B",
+    highlight: true,
   },
 ];
 
@@ -53,94 +64,178 @@ export default function WhySynapse() {
   return (
     <section id="why" className="section-padding">
       <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 24px" }}>
+
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.92, y: 24 }}
-          whileInView={{ opacity: 1, scale: 1, y: 0 }}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           viewport={{ once: true, margin: "-80px" }}
-          style={{ marginBottom: "72px", maxWidth: "640px" }}
+          style={{ marginBottom: "64px", maxWidth: "720px" }}
         >
           <p style={{ fontSize: "13px", fontWeight: 600, color: "#F59E0B", letterSpacing: "0.12em", marginBottom: "16px" }}>
             WHY AI. WHY NOW.
           </p>
           <h2
             style={{
-              fontSize: "clamp(36px, 5vw, 56px)",
+              fontSize: "clamp(36px, 5vw, 60px)",
               fontWeight: 700,
               letterSpacing: "-0.03em",
-              lineHeight: 1.1,
+              lineHeight: 1.08,
               marginBottom: "20px",
             }}
           >
-            Your competitors aren't
+            Your competitors aren&apos;t
             <br />
             <span className="gradient-text">waiting around.</span>
           </h2>
           <p style={{ fontSize: "18px", color: "rgba(255,255,255,0.5)", lineHeight: 1.7 }}>
-            We believe in continuous improvement and empowerment. AI doesn&apos;t replace great people —
-            it removes the grunt work that stops them from being great.
-            Here&apos;s what that looks like in practice.
+            Right now, businesses like yours are deploying AI to capture more leads, slash overheads, and outpace rivals who are still doing things manually. The window to act is open — but it won&apos;t be forever.
           </p>
         </motion.div>
 
-        <PainPointsGrid />
-
-        {/* Grid */}
+        {/* Cards grid */}
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-            gap: "2px",
-            background: "rgba(255,255,255,0.04)",
-            borderRadius: "20px",
-            overflow: "hidden",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            gap: "16px",
           }}
+          className="why-grid"
         >
-          {reasons.map((reason, index) => (
+          {cards.map((card, index) => (
             <motion.div
-              key={reason.title}
-              initial={{ opacity: 0, y: 20 }}
+              key={card.title}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: index * 0.08 }}
+              transition={{ duration: 0.45, delay: index * 0.08 }}
               viewport={{ once: true }}
               style={{
-                padding: "36px 32px",
-                background: "#0A0A0A",
-                transition: "background 0.2s ease",
+                background: card.highlight ? `${card.color}08` : "#0A0A0A",
+                border: `1px solid ${card.highlight ? card.color + "30" : "rgba(255,255,255,0.06)"}`,
+                borderRadius: "18px",
+                padding: "32px 28px",
+                display: "flex",
+                flexDirection: "column",
+                transition: "border-color 0.2s, transform 0.2s, background 0.2s",
+                position: "relative",
+                overflow: "hidden",
               }}
               onMouseEnter={(e) => {
-                (e.currentTarget as HTMLDivElement).style.background = "#111111";
+                (e.currentTarget as HTMLDivElement).style.borderColor = `${card.color}50`;
+                (e.currentTarget as HTMLDivElement).style.transform = "translateY(-4px)";
               }}
               onMouseLeave={(e) => {
-                (e.currentTarget as HTMLDivElement).style.background = "#0A0A0A";
+                (e.currentTarget as HTMLDivElement).style.borderColor = card.highlight ? `${card.color}30` : "rgba(255,255,255,0.06)";
+                (e.currentTarget as HTMLDivElement).style.transform = "translateY(0)";
               }}
             >
+              {/* Subtle glow for highlighted cards */}
+              {card.highlight && (
+                <div
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    right: 0,
+                    width: "160px",
+                    height: "160px",
+                    background: `radial-gradient(circle, ${card.color}12 0%, transparent 70%)`,
+                    pointerEvents: "none",
+                  }}
+                />
+              )}
+
+              {/* Icon */}
               <div
                 style={{
-                  width: "44px",
-                  height: "44px",
-                  borderRadius: "10px",
-                  background: `${reason.color}18`,
-                  border: `1px solid ${reason.color}30`,
+                  width: "48px",
+                  height: "48px",
+                  borderRadius: "12px",
+                  background: `${card.color}15`,
+                  border: `1px solid ${card.color}30`,
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                   marginBottom: "20px",
+                  flexShrink: 0,
                 }}
               >
-                <reason.icon size={20} style={{ color: reason.color }} />
+                <card.icon size={22} style={{ color: card.color }} />
               </div>
-              <h3 style={{ fontSize: "18px", fontWeight: 700, marginBottom: "12px", letterSpacing: "-0.02em", lineHeight: 1.2 }}>
-                {reason.title}
+
+              {/* Eyebrow */}
+              <p style={{ fontSize: "11px", fontWeight: 600, color: card.color, letterSpacing: "0.1em", marginBottom: "8px" }}>
+                {card.eyebrow.toUpperCase()}
+              </p>
+
+              {/* Title */}
+              <h3
+                style={{
+                  fontSize: "18px",
+                  fontWeight: 700,
+                  letterSpacing: "-0.02em",
+                  lineHeight: 1.25,
+                  marginBottom: "14px",
+                  color: "white",
+                }}
+              >
+                {card.title}
               </h3>
-              <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.5)", lineHeight: 1.75 }}>
-                {reason.description}
+
+              {/* Description */}
+              <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.5)", lineHeight: 1.75, flex: 1 }}>
+                {card.description}
               </p>
             </motion.div>
           ))}
         </div>
+
+        {/* Bottom CTA bar */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          viewport={{ once: true }}
+          style={{
+            marginTop: "48px",
+            padding: "32px 40px",
+            background: "linear-gradient(135deg, rgba(139,92,246,0.08) 0%, rgba(236,72,153,0.06) 50%, rgba(245,158,11,0.06) 100%)",
+            border: "1px solid rgba(139,92,246,0.2)",
+            borderRadius: "18px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            gap: "32px",
+            flexWrap: "wrap",
+          }}
+        >
+          <div>
+            <p style={{ fontSize: "20px", fontWeight: 700, letterSpacing: "-0.02em", marginBottom: "6px" }}>
+              The best time to start was yesterday.{" "}
+              <span className="gradient-text">The second best is now.</span>
+            </p>
+            <p style={{ fontSize: "15px", color: "rgba(255,255,255,0.45)" }}>
+              Every week without AI is a week your competitors pull further ahead.
+            </p>
+          </div>
+          <button
+            onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
+            className="btn-gradient"
+            style={{ fontSize: "15px", padding: "15px 32px", whiteSpace: "nowrap", flexShrink: 0 }}
+          >
+            Get Started Today
+          </button>
+        </motion.div>
       </div>
+
+      <style>{`
+        @media (max-width: 900px) {
+          .why-grid { grid-template-columns: repeat(2, 1fr) !important; }
+        }
+        @media (max-width: 560px) {
+          .why-grid { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
     </section>
   );
 }
