@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Zap, Moon, TrendingUp, Users, BarChart3, Rocket } from "lucide-react";
-import ScrollArrow from "@/components/ScrollArrow";
+import PainPointsGrid from "@/components/PainPointsGrid";
 
 const reasons = [
   {
@@ -84,11 +84,10 @@ export default function WhySynapse() {
           </p>
         </motion.div>
 
-        <ScrollArrow targetId="why-grid" />
+        <PainPointsGrid />
 
         {/* Grid */}
         <div
-          id="why-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
