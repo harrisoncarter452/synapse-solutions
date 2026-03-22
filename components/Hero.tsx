@@ -36,6 +36,7 @@ export default function Hero() {
 
   return (
     <section
+      className="hero-section"
       style={{
         minHeight: "100vh",
         display: "flex",
@@ -140,6 +141,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.35 }}
+              className="hero-ctas"
               style={{ display: "flex", gap: "14px", flexWrap: "wrap", alignItems: "center" }}
             >
               <button

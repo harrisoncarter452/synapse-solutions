@@ -159,7 +159,7 @@ export default function QuoteForm() {
             whileInView={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             viewport={{ once: true, margin: "-80px" }}
-            className="gradient-border"
+            className="gradient-border form-card"
             style={{ padding: "40px" }}
           >
             {status === "success" ? (
@@ -197,7 +197,7 @@ export default function QuoteForm() {
                 </h3>
 
                 {/* Row: Name + Email */}
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px", marginBottom: "16px" }}>
+                <div className="form-name-email" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px", marginBottom: "16px" }}>
                   <div>
                     <label style={labelStyle}>Full Name *</label>
                     <input
@@ -351,7 +351,7 @@ export default function QuoteForm() {
         @media (max-width: 768px) {
           .grid-quote {
             grid-template-columns: 1fr !important;
-            gap: 48px !important;
+            gap: 36px !important;
           }
         }
       `}</style>

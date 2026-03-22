@@ -198,6 +198,7 @@ export default function WhySynapse() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
           viewport={{ once: true }}
+          className="why-cta"
           style={{
             marginTop: "48px",
             padding: "32px 40px",

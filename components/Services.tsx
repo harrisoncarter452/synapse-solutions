@@ -269,6 +269,7 @@ function ServiceDetail({ service, index }: { service: typeof services[0]; index:
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true, margin: "-80px" }}
+      className="service-detail"
       style={{
         borderTop: "1px solid rgba(255,255,255,0.06)",
         padding: "80px 0",
@@ -320,6 +321,7 @@ function ServiceDetail({ service, index }: { service: typeof services[0]; index:
 
         {/* Stat */}
         <div
+          className="service-stat"
           style={{
             textAlign: "right",
             flexShrink: 0,

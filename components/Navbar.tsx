@@ -46,7 +46,7 @@ export default function Navbar() {
       }}
     >
       <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 24px" }}>
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: "110px" }}>
+        <div className="navbar-inner" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: "110px" }}>
           {/* Logo */}
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
@@ -57,6 +57,7 @@ export default function Navbar() {
               alt="Synapse Solutions"
               width={320}
               height={80}
+              className="navbar-logo"
               style={{ objectFit: "contain" }}
             />
           </button>

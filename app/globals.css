@@ -137,4 +137,36 @@ body {
   .section-padding {
     padding: 36px 0;
   }
+
+  /* Navbar */
+  .navbar-inner { height: 70px !important; }
+  .navbar-logo { width: 180px !important; height: 45px !important; }
+
+  /* Hero */
+  .hero-section { padding-top: 78px !important; }
+  .hero-ctas { flex-direction: column !important; align-items: stretch !important; }
+  .hero-ctas button { justify-content: center !important; }
+
+  /* Services */
+  .service-detail { padding: 48px 0 !important; }
+  .service-stat { text-align: left !important; }
+
+  /* Quote form */
+  .form-name-email { grid-template-columns: 1fr !important; }
+  .form-card { padding: 24px !important; }
+  .quote-gap { gap: 40px !important; }
+
+  /* WhySynapse CTA bar */
+  .why-cta { padding: 24px 20px !important; flex-direction: column !important; align-items: flex-start !important; }
+
+  /* Footer */
+  .footer-outer { padding: 48px 24px 32px !important; }
+  .footer-bottom { flex-direction: column !important; align-items: flex-start !important; }
+
+  /* PainPoints */
+  .painpoints-card { padding: 20px 16px !important; }
+}
+
+@media (max-width: 420px) {
+  .painpoints-grid { grid-template-columns: 1fr !important; }
 }

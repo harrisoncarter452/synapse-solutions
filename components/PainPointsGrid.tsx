@@ -59,6 +59,7 @@ export default function PainPointsGrid() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45, delay: i * 0.08 }}
             viewport={{ once: true }}
+            className="painpoints-card"
             style={{
               background: "#0f0f0f",
               border: "1px solid rgba(255,255,255,0.07)",
